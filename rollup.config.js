@@ -1,6 +1,6 @@
 import vue from "rollup-plugin-vue";
 import scss from "rollup-plugin-scss";
-import commonjs from "rollup-plugin-commonjs";
+import commonjs from "@rollup/plugin-commonjs";
 
 export default [
   {
@@ -10,9 +10,9 @@ export default [
       file: "dist/library.esm.js",
     },
     plugins: [
-      commonjs(),
+      vue(),
       scss({ outputStyle: "compressed" }),
-      vue({ needMap: false }),
+      commonjs(),
     ],
   },
   {
@@ -22,9 +22,9 @@ export default [
       file: "dist/library.browser.js",
     },
     plugins: [
-      commonjs(),
+      vue(),
       scss({ outputStyle: "compressed" }),
-      vue({ needMap: false }),
+      commonjs(),
     ],
   },
   {
@@ -34,9 +34,9 @@ export default [
       file: "dist/library.common.js",
     },
     plugins: [
-      commonjs(),
-      scss({ outputStyle: "compressed" }),
       vue({ template: { optimizeSSR: true } }),
+      scss({ outputStyle: "compressed" }),
+      commonjs(),
     ],
   },
 ];

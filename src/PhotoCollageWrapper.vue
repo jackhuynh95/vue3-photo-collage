@@ -72,11 +72,14 @@ export default {
   },
   data() {
     const layout = this.layout;
-    const internalHeight = this.height;
+    // Create a copy to avoid mutating the prop
+    const internalHeight = this.height ? [...this.height] : [];
 
     if (internalHeight.length < layout.length) {
       for (let i = 0; i < layout.length; i++) {
-        internalHeight[i] = "200px";
+        if (!internalHeight[i]) {
+          internalHeight[i] = "200px";
+        }
       }
     }
 
@@ -94,6 +97,40 @@ export default {
         this.allowRender = !Object.keys(this.layoutPhotoMaps).length;
       },
     },
+    photos: {
+      handler() {
+        this.layoutPhotoMaps = createLayoutPhotoMaps(this.layout, this.photos);
+      },
+      immediate: true,
+    },
+    layout: {
+      handler() {
+        this.layoutPhotoMaps = createLayoutPhotoMaps(this.layout, this.photos);
+        // Update internalHeight if layout changes
+        if (this.height && this.height.length < this.layout.length) {
+          for (let i = this.height.length; i < this.layout.length; i++) {
+            this.internalHeight[i] = "200px";
+          }
+        } else if (!this.height || this.height.length === 0) {
+          this.internalHeight = this.layout.map(() => "200px");
+        }
+      },
+      immediate: true,
+    },
+    height: {
+      handler(newHeight) {
+        if (newHeight) {
+          this.internalHeight = [...newHeight];
+          // Fill missing heights if layout is longer
+          if (this.internalHeight.length < this.layout.length) {
+            for (let i = this.internalHeight.length; i < this.layout.length; i++) {
+              this.internalHeight[i] = "200px";
+            }
+          }
+        }
+      },
+      immediate: true,
+    },
     gapSize: {
       handler() {
         this.setGapSize();
@@ -108,7 +145,6 @@ export default {
     },
   },
   created() {
-    this.layoutPhotoMaps = createLayoutPhotoMaps(this.layout, this.photos);
     this.setGapSize();
     this.setBorderRadius();
   },

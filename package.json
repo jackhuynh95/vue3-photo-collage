@@ -1,5 +1,5 @@
 {
-  "name": "vue-photo-collage",
+  "name": "vue3-photo-collage",
   "version": "1.0.5",
   "description": "A photo collage component for Vue.js",
   "main": "./dist/library.common.js",
@@ -16,7 +16,7 @@
   },
   "keywords": [
     "vue",
-    "vue2",
+    "vue3",
     "collage"
   ],
   "author": "Seanghay Yath <seanghay.dev@gmail.com>",
@@ -26,14 +26,16 @@
   },
   "homepage": "https://github.com/seanghay/vue-photo-collage#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@vue/compiler-sfc": "^3.4.21",
     "rimraf": "^3.0.2",
     "rollup": "^2.61.1",
-    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-scss": "^3.0.0",
-    "rollup-plugin-vue": "^5.1.9"
+    "rollup-plugin-vue": "^6.0.0",
+    "sass": "^1.93.3"
   },
   "dependencies": {
-    "vue": "^2.6.14"
+    "vue": "^3.4.21"
   },
   "files": [
     "dist/library.browser.js",
