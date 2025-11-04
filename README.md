@@ -4,6 +4,8 @@
 
 A Vue.js@3 version of [react-photo-collage](https://github.com/sopetrichor/react-photo-collage)
 
+> **Note**: This is a Vue 3 migration of the original [vue-photo-collage](https://github.com/seanghay/vue-photo-collage) repository (Vue 2).
+
 <img src="https://user-images.githubusercontent.com/15277233/146314612-1fd03d11-f9a5-4eb2-aedc-17409ad5a16e.png" width=450>
 
 ### CodeSandbox
@@ -29,7 +31,7 @@ npm i vue3-photo-collage
 </template>
 
 <script>
-import { PhotoCollageWrapper } from 'vue-photo-collage'
+import { PhotoCollageWrapper } from 'vue3-photo-collage'
 
 export default {
   components: {
@@ -84,6 +86,10 @@ export default {
 </script>
 ```
 
+
+## Credits
+
+This project is a Vue 3 migration of the original [vue-photo-collage](https://github.com/seanghay/vue-photo-collage) repository by [seanghay](https://github.com/seanghay).
 
 ## Contribution
 
