@@ -1,8 +1,8 @@
-# Vue Photo Collage
+# Vue3 Photo Collage
 
 [![Publish to NPM Registry](https://github.com/seanghay/vue-photo-collage/actions/workflows/publish.yml/badge.svg)](https://github.com/seanghay/vue-photo-collage/actions/workflows/publish.yml)
 
-A Vue.js@2 version of [react-photo-collage](https://github.com/sopetrichor/react-photo-collage)
+A Vue.js@3 version of [react-photo-collage](https://github.com/sopetrichor/react-photo-collage)
 
 <img src="https://user-images.githubusercontent.com/15277233/146314612-1fd03d11-f9a5-4eb2-aedc-17409ad5a16e.png" width=450>
 
@@ -13,7 +13,7 @@ A Vue.js@2 version of [react-photo-collage](https://github.com/sopetrichor/react
 ## Installation
 
 ```
-npm i vue-photo-collage
+npm i vue3-photo-collage
 ```
 
 ## Usage
