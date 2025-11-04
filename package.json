@@ -40,6 +40,9 @@
   "files": [
     "dist/library.browser.js",
     "dist/library.common.js",
-    "dist/library.esm.js"
+    "dist/library.esm.js",
+    "dist/library.browser.css",
+    "dist/library.common.css",
+    "dist/library.esm.css"
   ]
 }
